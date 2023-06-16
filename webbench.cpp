@@ -33,7 +33,6 @@ int bytes = 0;
 int http10 = 1; /* 0 - http/0.9, 1 - http/1.0, 2 - http/1.1 */
 /* Allow: GET, HEAD, OPTIONS, TRACE */
 #define PROGRAM_VERSION "1.5"
-
 const unsigned int METHOD_GET=0;
 const unsigned int METHOD_HEAD=1;
 const unsigned int METHOD_OPTIONS=2;
@@ -46,13 +45,15 @@ int force_reload = 0;
 int proxyport = 80;
 char *proxyhost = NULL;
 int benchtime = 30;
+
 /* internal */
 int mypipe[2];
 char host[MAXHOSTNAMELEN];
-#define REQUEST_SIZE 2048
+const int REQUEST_SIZE = 2048;
 char request[REQUEST_SIZE];
 
-static const struct option long_options[] = {
+static const struct option long_options[] = 
+{
     {"force",no_argument,&force,1},
     {"reload",no_argument,&force_reload,1},
     {"time",required_argument,NULL,'t'},
