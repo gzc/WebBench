@@ -32,11 +32,13 @@ int bytes = 0;
 /* globals */
 int http10 = 1; /* 0 - http/0.9, 1 - http/1.0, 2 - http/1.1 */
 /* Allow: GET, HEAD, OPTIONS, TRACE */
-#define METHOD_GET 0
-#define METHOD_HEAD 1
-#define METHOD_OPTIONS 2
-#define METHOD_TRACE 3
 #define PROGRAM_VERSION "1.5"
+
+const unsigned int METHOD_GET=0;
+const unsigned int METHOD_HEAD=1;
+const unsigned int METHOD_OPTIONS=2;
+const unsigned int METHOD_TRACE=3;
+
 int method = METHOD_GET;
 int clients = 1;
 int force = 0;
